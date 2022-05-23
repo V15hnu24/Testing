@@ -11,12 +11,12 @@ public class LaunchBrowser {
     public static WebDriver driver = null;
 
     public static void main(String[] args) throws InterruptedException {
-
-        System.setProperty("webdriver.chrome.driver", ".\\driver\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.whitelistedIps", "");
+        System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver_win32\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
-        driver.navigate().to("https://amazon.in");
+        driver.navigate().to("https://Amazon.in");
         driver.manage().window().maximize();
         String title = driver.getTitle();
 
@@ -35,7 +35,7 @@ public class LaunchBrowser {
         action.moveToElement(category).perform();
         Thread.sleep(2000);
 
-        WebElement books = driver.findElement(By.cssSelector("#nac-flyout-shopAll > div.nav-"))
+        WebElement books = driver.findElement(By.cssSelector("#nac-flyout-shopAll > div.nav-"));
 
     }
 }
