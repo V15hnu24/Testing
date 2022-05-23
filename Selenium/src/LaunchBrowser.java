@@ -27,15 +27,11 @@ public class LaunchBrowser {
         }
 
         String tagname = "";
-        tagname = driver.findElement(By.cssSelector("#nav-link-shopall > span.na-line-2")).getText();
+        tagname = driver.findElement(By.cssSelector("#searchDropdownBox")).getText();
         System.out.println(tagname);
 
-        WebElement category = driver.findElement(By.cssSelector("#nav-link-shopall > span.nav-line2 > span"));
-        Actions action = new Actions(driver);
-        action.moveToElement(category).perform();
-        Thread.sleep(2000);
-
-        WebElement books = driver.findElement(By.cssSelector("#nac-flyout-shopAll > div.nav-"));
+        WebElement category = driver.findElement(By.cssSelector("#searchDropdownBox"));
+        category.click();
 
     }
 }
